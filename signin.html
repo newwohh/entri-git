@@ -110,39 +110,50 @@
 
     <main class="container">
       <div></div>
-      <form>
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-        <div class="form-floating">
+      <div class="alert alert-danger"></div>
+      <form class="submitMe">
+        <div class="form-group">
+          <label for="name">Email address</label>
           <input
             type="email"
             class="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
+            id="name"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
           />
-          <label for="floatingInput">Email address</label>
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
         </div>
-        <div class="form-floating">
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
           <input
             type="password"
             class="form-control"
-            id="floatingPassword"
+            id="exampleInputPassword1"
             placeholder="Password"
           />
-          <label for="floatingPassword">Password</label>
         </div>
-
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-          </label>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">
-          Sign in
-        </button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        <button class="btn btn-primary" type="submit">Submit</button>
       </form>
       <div></div>
     </main>
   </body>
+  <script type="text/javascript">
+    let form = document.querySelector(".submitMe");
+    let nameInput = document.getElementById("name");
+
+    const alertMessage = document.querySelector(".alert");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // document.body.style.backgroundColor = "red";
+    });
+  </script>
 </html>
