@@ -35,4 +35,11 @@ form.addEventListener("submit", (e) => {
       alertMessage.style.display = "none";
     }
   }
+
+  if (
+    passwordInput.value == repeatedPasswordInput.value &&
+    passwordInput.value.length != 0
+  ) {
+    window.alert("Hola Amigo!");
+  }
 });
